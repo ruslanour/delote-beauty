@@ -22,7 +22,7 @@ html, body {
     width: 100%;
     height: 100%;
     background: url(../style/img/bg.jfif);
-    background-size: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-blend-mode: color;
     background-color: #00000080;
@@ -30,7 +30,9 @@ html, body {
     display: flex;
     flex-direction: column;
 }
-
+html {
+    background-color: #111111;
+}
 header {
     width: 1280px;
     margin: 30px auto;
@@ -48,11 +50,26 @@ nav {
 nav a {
     color: #FFFFFF;
     text-decoration: none;
+    border-bottom: solid 1px #cdaa7d00;
 }
 
 nav a:hover {
     color: #CDAA7D;
+    border-color: #CDAA7D ;
 }
+.instagram,
+.logo,
+.label_menu,
+.lable_close {
+  border: none;
+  color: white;
+}
+.instagram:hover,
+.logo:hover,
+.label_menu:hover,
+.lable_close:hover {
+    color: gold;
+} 
 
 .logo {
     margin: 0 40px;
@@ -118,4 +135,100 @@ hr {
     width: 1280px;
     margin: 0 auto;
     border-color: #FFFFFF80;
+}
+.banner {
+    display: flex;
+    justify-content: center;
+    width: 100vv;
+    height: 100vh;
+}
+.banner h1 {
+    color: white;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 86px;
+    text-align: center;
+    margin-top: 260px;
+}
+.scroll {
+    position: absolute;
+    bottom: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translate(0,0);
+  }   
+  100% { transform: translate(0,5px);}
+}
+.scroll_circle {
+    animation: scrollAnimation .4s linear infinite alternate
+}
+blockquote {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+    width: 850px;
+    margin: 0 auto;
+    font-size: 27px;
+    line-height: 31px;
+    font-weight: 700px;
+    color: white;
+}
+blockquote::before {
+    content: url(/about.svg);
+}
+.service {
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 100px;
+}
+.service article {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 30px;
+    line-height: 46px;
+    color: white;
+
+}
+.service img {
+    width: 396px;
+    height: 300px;
+}
+.service article:after {
+    content: '';
+    display: block;
+    width: 396px;
+    height: 300px;
+    border: solid 1px  #CDAA7D;
+    position: absolute;
+    transform: translate(20px, -20px);
+    z-index: -1;
+
+}
+.brend {
+    width: 1280px;
+    margin: 150px auto;
+    display: flex;
+    justify-content: space-around;
+    transition: all .1s linear;
+}
+.brend_img {
+    filter: brightness(.4);
+    cursor: pointer;
+}
+.brend_img:hover{
+filter: brightness(1);
 }
